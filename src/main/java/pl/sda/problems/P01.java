@@ -116,13 +116,25 @@ public class P01 {
         return output;
     }
 
-    public static List<String> flatten(List<Object> asList, Class<String> stringClass) {
+    public static List<String> flatten(List<Object> asList, Class stringClass) {
         List<String> flatten = new ArrayList<>();
 
-        for (Object e: asList) {
-            if ()
+//        List<String> flatten2 = asList.stream()
+//                .flatMap(asList::stream)
+//                .collect(Collectors.toList());
+////        instanceOf
+
+        for (int i = 0; i < asList.size(); i++){
+            if (asList.get(i).getClass().equals(stringClass)){
+//                System.out.println(asList.get(i));
+                flatten.add(asList.get(i).toString());
+            }else {
+                List<Object> asList2 = (List<Object>) asList.get(i);
+                List<String> flattenInner = flatten(asList2, stringClass);
+                flatten.addAll(flattenInner);
+            }
+
         }
-        //instanceOf
 
         return flatten;
     }

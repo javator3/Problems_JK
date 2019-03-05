@@ -30,7 +30,7 @@ public class Problems {
         List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
         assertThat(P01.reverse(numbers), is(equalTo(Arrays.asList(5, 4, 3, 2, 1))));
     }
-//
+
 //    @Test
 //    public void shouldReturnTrueWhenListIsPalindrome() throws Exception {
 //        assertTrue(P01.isPalindrome(Arrays.asList("x", "a", "m", "a", "x")));
